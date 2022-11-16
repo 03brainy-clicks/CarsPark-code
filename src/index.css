@@ -1,0 +1,17 @@
+/* tailwind  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("react-toastify/dist/ReactToastify.css");
+
+.greenBackColor {
+  /* background-color: #5ae4a8; */
+  background-color: #1a2e35;
+}
+.greenBackColorLight {
+  background-color: #1a2e350a;
+}
+.greenColor {
+  color: #1a2e35;
+}
