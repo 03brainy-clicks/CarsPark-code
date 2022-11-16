@@ -73,52 +73,54 @@ function App() {
           {/* -------------------------------- / input card or add vehicle section -------------------------- */}
           {/* --------------------------------------- Record table table ------------------------------------- */}
 
-          <div className=" bg-white w-full p-10 shadow-md rounded mt-10 overflow-x">
+          <div className=" bg-white w-full p-10 shadow-md rounded mt-10 ">
             <h4 className="greenColor font-bold mb-5 text-lg">
               Vehicles Parked on Date :- {date.toString().slice(4, 15)}
               <span className="md:float-right md:inline block">
                 Vehicle Parked ({vehicleCount})
               </span>
             </h4>
-            <table className="table-auto w-full rounded overflow-scroll">
-              <thead className="greenBackColor text-white">
-                <tr>
-                  <th>Driver Name</th>
-                  <th>Vehicle Brand / Model</th>
-                  <th>Vehicle Number</th>
-                  <th>Entry Time</th>
-                  <th>Exit Time</th>
-                </tr>
-              </thead>
-              <tbody className="greenBackColorLight text-center ">
-                {parkingList
-                  ? parkingList.map((vehicle) => {
-                      return (
-                        <tr key={vehicle.vehicleNumber} className="my-5">
-                          <td>{vehicle.driverName}</td>
-                          <td>{vehicle.vehicleName}</td>
-                          <td>{vehicle.vehicleNumber}</td>
-                          <td>{vehicle.enterTime}</td>
-                          <td>
-                            {vehicle.exitTime ? (
-                              vehicle.exitTime
-                            ) : (
-                              <button
-                                className="py-1 px-5 greenBackColor rounded text-white"
-                                onClick={() => {
-                                  handleExit(vehicle);
-                                }}
-                              >
-                                Exit
-                              </button>
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })
-                  : "No Enteries Curently"}
-              </tbody>
-            </table>
+            <div className="overflow-auto">
+              <table className="table-auto md:w-full  w-96 rounded overflow-scroll">
+                <thead className="greenBackColor text-white">
+                  <tr>
+                    <th>Driver Name</th>
+                    <th>Vehicle Brand / Model</th>
+                    <th>Vehicle Number</th>
+                    <th>Entry Time</th>
+                    <th>Exit Time</th>
+                  </tr>
+                </thead>
+                <tbody className="greenBackColorLight text-center ">
+                  {parkingList
+                    ? parkingList.map((vehicle) => {
+                        return (
+                          <tr key={vehicle.vehicleNumber} className="my-5">
+                            <td>{vehicle.driverName}</td>
+                            <td>{vehicle.vehicleName}</td>
+                            <td>{vehicle.vehicleNumber}</td>
+                            <td>{vehicle.enterTime}</td>
+                            <td>
+                              {vehicle.exitTime ? (
+                                vehicle.exitTime
+                              ) : (
+                                <button
+                                  className="py-1 px-5 greenBackColor rounded text-white"
+                                  onClick={() => {
+                                    handleExit(vehicle);
+                                  }}
+                                >
+                                  Exit
+                                </button>
+                              )}
+                            </td>
+                          </tr>
+                        );
+                      })
+                    : "No Enteries Curently"}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           {/* --------------------------------------- / Record table table ------------------------------------- */}
