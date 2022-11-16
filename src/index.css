@@ -3,8 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* toast css  */
 @import url("react-toastify/dist/ReactToastify.css");
 
+/* custom css  */
 .greenBackColor {
   /* background-color: #5ae4a8; */
   background-color: #1a2e35;

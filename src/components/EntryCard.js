@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+// toast for alert
 import { toast } from "react-toastify";
 
 const EntryCard = (props) => {
@@ -7,12 +9,14 @@ const EntryCard = (props) => {
   const [vehicleName, setVehicleName] = useState("");
   const [vehicleNumber, setVehicleNumber] = useState("");
 
-  // set call
+  // destructure props
   const { addParking } = props;
 
   // function or action to preform
   const handleAdd = (e) => {
     e.preventDefault();
+
+    // checking data field
     if (driverName && vehicleNumber && vehicleName) {
       const date = new Date();
       const userData = {
@@ -22,6 +26,7 @@ const EntryCard = (props) => {
         enterTime: date.toString().slice(16, 25),
         exitTime: null,
       };
+
       addParking(userData);
 
       //   setting back values to initial
@@ -29,6 +34,7 @@ const EntryCard = (props) => {
       setVehicleName("");
       setVehicleNumber("");
     } else {
+      // warning  alert
       toast.warn("Fill All Details");
     }
   };

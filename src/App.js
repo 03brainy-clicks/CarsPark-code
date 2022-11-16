@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+
+// component
 import EntryCard from "./components/EntryCard";
-import Parking from "./parking.jpg";
-//
+
+// image
+import Parking from "./images/parking.jpg";
+
+// toast for alerts
 import { ToastContainer, toast } from "react-toastify";
 
 function App() {
@@ -92,6 +97,7 @@ function App() {
                   </tr>
                 </thead>
                 <tbody className="greenBackColorLight text-center ">
+                  {/* cars parking list  */}
                   {parkingList
                     ? parkingList.map((vehicle) => {
                         return (
