@@ -76,7 +76,7 @@ function App() {
           <div className=" bg-white w-full p-10 shadow-md rounded mt-10 overflow-x">
             <h4 className="greenColor font-bold mb-5 text-lg">
               Vehicles Parked on Date :- {date.toString().slice(4, 15)}
-              <span className="float-right">
+              <span className="md:float-right md:inline block">
                 Vehicle Parked ({vehicleCount})
               </span>
             </h4>
