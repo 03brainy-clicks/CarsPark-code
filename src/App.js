@@ -58,7 +58,7 @@ function App() {
       <ToastContainer />
       <div className="container my-10 md:w-3/4 w-4/5 mx-auto">
         <h4 className="text-2xl font-bold greenColor mb-5">CarsPark</h4>
-        <h4></h4>
+
         <div className="mt-9">
           {/* -------------------------------- input card or add vehicle section -------------------------- */}
 
